@@ -31,7 +31,11 @@
               "Resources/vendor/hs-megamenu/src/hs.megamenu.css",
               "Resources/vendor/animate.css",
               "Resources/css/unify.css",
-              "Resources/css/custom.css"
+              "Resources/css/custom.css",
+              "Resources/css/footer-default.css",
+             
+              "Resources/css/blocks.css",
+              "Resources/css/footer-v1.css"
             ],
             "scripts": [
               "Resources/vendor/jquery/jquery.min.js",
