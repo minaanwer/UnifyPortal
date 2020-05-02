@@ -8,6 +8,7 @@ to Run this portal follow up the following steps :
 2- check that you install angular and all its dependencies.<br/> 
    Run  `ng --version`<br/>
 3- install project dependencies Run `npm update`<br/>    
+4- Run project  
    Run `ng serve`<br/> 
 5- Navigate to `http://localhost:4200/` <br/>
 
