@@ -1,10 +1,18 @@
 # UnifyPortal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+welcom in this awesome project 
+to run this portal follow up this steps 
 
-## Development server
+1- download solution as zip file / extract 
+   or clone using github . 
+   ( from any termianl go to specific directory and type :  git clone https://github.com/minaanwer/UnifyPortal.git)
+2- check that you install angular and all its dependancies. 
+   type : ng --version
+3- install project dependancies type  : npm update    
+4- type :  ng serve 
+5- Navigate to `http://localhost:4200/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+options : 
 
 ## Code scaffolding
 
