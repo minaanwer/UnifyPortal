@@ -3,16 +3,14 @@
 Welcome in this awesome project 
 to Run this portal follow up the following steps : 
 
-1- download solution as zip file / extract 
-   or clone using Github . 
-   (from any terminal go to specific directory run  `git clone https://github.com/minaanwer/UnifyPortal.git`
-2- check that you install angular and all its dependencies. 
-   Run  `ng --version`
-3- install project dependencies Run `npm update`    
-4- type :  `ng serve` 
-5- Navigate to `http://localhost:4200/`
+1- download solution as zip file / extract or clone using Github.<br/> 
+   (from any terminal go to specific directory run  `git clone https://github.com/minaanwer/UnifyPortal.git` <br/>
+2- check that you install angular and all its dependencies.<br/> 
+   Run  `ng --version`<br/>
+3- install project dependencies Run `npm update`<br/>    
+   Run `ng serve`<br/> 
+5- Navigate to `http://localhost:4200/` <br/>
 
-options : 
 
 ## Code scaffolding
 
