@@ -24,9 +24,33 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "Resources/vendor/bootstrap/bootstrap.min.css",
+              "Resources/vendor/icon-hs/style.css",
+              "Resources/vendor/icon-awesome/css/font-awesome.min.css",
+              "Resources/vendor/hamburgers/hamburgers.min.css",
+              "Resources/vendor/hs-megamenu/src/hs.megamenu.css",
+              "Resources/vendor/animate.css",
+              "Resources/css/unify.css",
+              "Resources/css/custom.css"
             ],
-            "scripts": []
+            "scripts": [
+              "Resources/vendor/jquery/jquery.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery.easing/js/jquery.easing.js",
+              
+              "Resources/vendor/popperjs/popper.min.js",
+              "Resources/vendor/bootstrap/bootstrap.min.js",
+              "Resources/vendor/hs-megamenu/src/hs.megamenu.js",
+              "Resources/js/hs.core.js",
+              "Resources/js/components/hs.header.js",
+              "Resources/js/helpers/hs.hamburgers.js",
+              "Resources/js/components/hs.go-to.js",
+              "Resources/js/custom.js",
+              "Resources/home.js"
+              
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +143,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "UnifyPortal"
 }
