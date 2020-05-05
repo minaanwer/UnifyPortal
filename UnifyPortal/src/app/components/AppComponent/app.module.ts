@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { MegaMenuComponent } from '../megaMenu/mega-menu.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HomeComponent } from '../home/home.component';
+import { LoginComponent } from '../login/login.component';
+import { ErrorComponent } from '../error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MegaMenuComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
