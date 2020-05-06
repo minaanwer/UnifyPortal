@@ -14,13 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit(): void {
-    this.initSession()
-  }
-
-  initSession() {
     sessionStorage.clear()
   }
-
 
   savebtnClicked() {
 
@@ -37,6 +32,11 @@ export class LoginComponent implements OnInit {
 
     if (sessionStorage.getItem("activeUser") === "monna") {
       this.router.navigate(['home'])
+      
+      //this.router.navigateByUrl('/menu', { skipLocationChange: true }).then(() => {
+      //this.router.navigate(['home']);
+      //}); 
+
 
     } else {
       this.errorMessage = "username and password combination is not correct !"
