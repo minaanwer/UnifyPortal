@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'Resources/vendor/jquery/jquery.min.js';
+import { LoginServiceService } from 'src/app/services/DataServices/Login/login-service.service';
 
 @Component({
   selector: 'app-mega-menu',
@@ -8,24 +8,16 @@ import * as $ from 'Resources/vendor/jquery/jquery.min.js';
 })
 export class MegaMenuComponent implements OnInit {
 
-  constructor() { }
+  isActiveUser:boolean
 
-  isActiveUser: boolean
+  LoginService :LoginServiceService
+
+  constructor(myLoginService: LoginServiceService ) {
+    this.LoginService = myLoginService
+   }
 
   ngOnInit(): void {
-    this.initMenu();
+
   }
-
-  initMenu() {
-    let username = sessionStorage.getItem('activeUser')
-
-    if (!(username === '' || username === null))
-      this.isActiveUser = true;
-    else
-      this.isActiveUser = false
-
-    console.log('username is XXX : ' + username)
-  }
-
 
 }

@@ -9,10 +9,19 @@ export class LoginServiceService {
   constructor() { }
 
 
-  ValidateLogin( user: loginUserModel ){ 
+  ValidateLogin(user: loginUserModel) {
+    if (user.username === "monna" && user.password === "monna") {
+      sessionStorage.setItem('activeUser', user.username);
+    }
+  }
 
-    if(user.username === "monna" && user.password === "monna")
-    sessionStorage.setItem('activeUser',user.username);
+  IsUserLogin() {
+    let user = sessionStorage.getItem('activeUser');
+    if (user === 'monna') {
+      return true
+    } else {
+      return false;
+    }
 
   }
 

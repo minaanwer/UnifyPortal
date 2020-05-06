@@ -40,6 +40,13 @@
               "Resources/css/header-default.css"
             ],
             "scripts": [
+              "Resources/vendor/jquery/jquery.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery.easing/js/jquery.easing.js",
+              "Resources/vendor/popperjs/popper.min.js",
+              "Resources/vendor/bootstrap/bootstrap.min.js",
+              "Resources/home.js",
               "Resources/vendor/hs-megamenu/src/hs.megamenu.js",
               "Resources/js/hs.core.js",
               "Resources/js/components/hs.header.js",
@@ -48,13 +55,7 @@
               "Resources/js/custom.js",
               "Resources/home.js",
               "Resources/js/app.js",
-              "Resources/js/page_contacts.js",
-              "Resources/vendor/jquery/jquery.min.js",
-              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
-              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
-              "Resources/vendor/jquery.easing/js/jquery.easing.js",
-              "Resources/vendor/popperjs/popper.min.js",
-              "Resources/vendor/bootstrap/bootstrap.min.js"
+              "Resources/js/page_contacts.js"
             ]
           },
           "configurations": {

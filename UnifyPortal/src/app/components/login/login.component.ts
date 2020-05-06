@@ -9,45 +9,44 @@ import { LoginServiceService } from 'src/app/services/DataServices/Login/login-s
 })
 export class LoginComponent implements OnInit {
 
-  loginUserPMO:loginUserModel = new loginUserModel('','')
+  loginUserPMO: loginUserModel = new loginUserModel('', '')
   errorMessage = ""
-  constructor(private router:Router ,private loginService : LoginServiceService ) { }
+  constructor(private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit(): void {
     this.initSession()
   }
-  
-  initSession(){
-    console.log("initSession")
+
+  initSession() {
     sessionStorage.clear()
   }
 
 
-  savebtnClicked(){
-    console.log("loginUserPMO")
-    console.log(this.loginUserPMO)
-     
-    if(this.loginUserPMO.username === "" )
-     this.errorMessage = "username is required !"
+  savebtnClicked() {
 
-    if(this.loginUserPMO.password === "" )
-     this.errorMessage = "password is required !"
-    
-    if(this.loginUserPMO.username === "" && this.loginUserPMO.password === "" )
-     this.errorMessage = "username and password are required !"
-    
-     console.log("we here !")
-    
-     this.loginService.ValidateLogin(this.loginUserPMO)
+    if (this.loginUserPMO.username === "")
+      this.errorMessage = "username is required !"
 
-     if(localStorage.getItem("activeUser"))
-     this.router.navigate(['home'])
+    if (this.loginUserPMO.password === "")
+      this.errorMessage = "password is required !"
 
-   }
+    if (this.loginUserPMO.username === "" && this.loginUserPMO.password === "")
+      this.errorMessage = "username and password are required !"
+
+    this.loginService.ValidateLogin(this.loginUserPMO)
+
+    if (sessionStorage.getItem("activeUser") === "monna") {
+      this.router.navigate(['home'])
+
+    } else {
+      this.errorMessage = "username and password combination is not correct !"
+    }
+
+  }
 
 }
 
-export class loginUserModel{
-constructor(public username :string , public password:string){}
+export class loginUserModel {
+  constructor(public username: string, public password: string) { }
 
 }
