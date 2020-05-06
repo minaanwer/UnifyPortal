@@ -1,5 +1,5 @@
 <!-- Header -->
-<header id="js-header" class="u-header u-header--static">
+<header id="js-header" *ngIf="isActiveUser === true" class="u-header u-header--static">
   <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
     <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
       <div class="container">
@@ -1103,25 +1103,13 @@
     </nav>
   </div>
 </header>
-<!-- End Header -->
 
-
-<script>
-  $(document).on('ready', function () {
-    // initialization of go to
-    $.HSCore.components.HSGoTo.init('.js-go-to');
-  });
-
-  $(window).on('load', function () {
-    // initialization of header
-    $.HSCore.components.HSHeader.init($('#js-header'));
-    $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-    // initialization of HSMegaMenu component
-    $('.js-mega-menu').HSMegaMenu({
-      event: 'hover',
-      pageContainer: $('.container'),
-      breakpoint: 991
-    });
-  });
-</script>
+<div  *ngIf="isActiveUser === false" class="header">
+  <div class="container">
+    <a class="logo">
+      <img src="../../../assets/CustomImg/logo-1.png" alt="Logo">
+    </a>
+  </div>
+  <br/>
+  <br/>
+</div>

@@ -1,7 +1,52 @@
+<body>
+<div class="wrapper">
+  
+  <div class="container content height-450">
+    <div class="row">
+      <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
 
-  <section class="g-min-height-60vh g-py-50">
-    <div class="container">
-      <!-- <h1 class="h1 g-font-weight-300 g-color-black g-mb-20">Please download the <strong>Master Slider</strong> demos from the provided dropbox link inside the <strong>README.txt</strong> file.</h1> -->
-      <p><code>this is login contents </code></p>
+        <form  (ngSubmit) = "savebtnClicked()"   #loginForm="ngForm"  class="reg-page">
+          
+          <div class="reg-header">
+            <h2>Portal Login</h2>
+          </div>
+
+          <div class="input-group input-group-prepend margin-bottom-20">
+            <span class="input-group-text"><i class="fa fa-user"></i></span>
+            <input  #username = "ngModel"  [(ngModel)] = "loginUserPMO.username" class="form-control" 
+              id="form-username" name="username" placeholder="Username..." type="text" value="" required="required" >
+          </div>
+         
+          <div class="input-group input-group-prepend margin-bottom-20">
+            <span class="input-group-text"> <i class="fa fa-lock"></i></span>
+            <input  #password = "ngModel"  [(ngModel)] = "loginUserPMO.password" class="form-control" id="form-password" name="password" placeholder="Password..." type="password" required="required" >
+          </div>
+
+          <div class="row">
+            <div class="col-md-9">
+              <span *ngIf="errorMessage" class = "help-block error color-red" > {{errorMessage}} </span>
+            
+              <!-- @Html.ValidationMessageFor(model => model.UserName, null, new {@class = "help-block error color-red"}) -->  
+               
+         
+              
+              <!-- <span *ngIf="username.invalid && savebtnClicked()" class = "help-block error color-red" > username required</span> 
+              <span *ngIf="password.invalid && savebtnClicked() " class = "help-block error color-red" > password required</span> -->
+              
+            </div>
+
+
+
+
+            <div class="col-md-3">
+              <button  class="btn-u pull-right" type="submit">Login</button>
+            </div>
+          </div>
+
+  
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
+</div>
+</body>

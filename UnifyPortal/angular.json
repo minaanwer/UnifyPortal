@@ -33,27 +33,28 @@
               "Resources/css/unify.css",
               "Resources/css/custom.css",
               "Resources/css/footer-default.css",
-             
               "Resources/css/blocks.css",
-              "Resources/css/footer-v1.css"
+              "Resources/css/footer-v1.css",
+              "Resources/css/theme-colors/purple.css",
+              "Resources/css/app.css",
+              "Resources/css/header-default.css"
             ],
             "scripts": [
-              "Resources/vendor/jquery/jquery.min.js",
-              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
-              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
-              "Resources/vendor/jquery.easing/js/jquery.easing.js",
-              
-              "Resources/vendor/popperjs/popper.min.js",
-              "Resources/vendor/bootstrap/bootstrap.min.js",
               "Resources/vendor/hs-megamenu/src/hs.megamenu.js",
               "Resources/js/hs.core.js",
               "Resources/js/components/hs.header.js",
               "Resources/js/helpers/hs.hamburgers.js",
               "Resources/js/components/hs.go-to.js",
               "Resources/js/custom.js",
-              "Resources/home.js"
-              
-              
+              "Resources/home.js",
+              "Resources/js/app.js",
+              "Resources/js/page_contacts.js",
+              "Resources/vendor/jquery/jquery.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
+              "Resources/vendor/jquery.easing/js/jquery.easing.js",
+              "Resources/vendor/popperjs/popper.min.js",
+              "Resources/vendor/bootstrap/bootstrap.min.js"
             ]
           },
           "configurations": {

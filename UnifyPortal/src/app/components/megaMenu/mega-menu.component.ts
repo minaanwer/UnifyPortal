@@ -10,18 +10,22 @@ export class MegaMenuComponent implements OnInit {
 
   constructor() { }
 
+  isActiveUser: boolean
+
   ngOnInit(): void {
-   
     this.initMenu();
-
-
   }
 
-initMenu(){
- console.log("mega menu works !") 
+  initMenu() {
+    let username = sessionStorage.getItem('activeUser')
 
+    if (!(username === '' || username === null))
+      this.isActiveUser = true;
+    else
+      this.isActiveUser = false
 
-}
+    console.log('username is XXX : ' + username)
+  }
 
 
 }
