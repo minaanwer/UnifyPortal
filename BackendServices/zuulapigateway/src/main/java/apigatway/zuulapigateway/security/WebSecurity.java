@@ -30,7 +30,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
 
                 .antMatchers("/users-ws/users/status/check/temp").permitAll()
-                .antMatchers("/transactions-ws/transactions/status/check/temp").permitAll()
+                .antMatchers("/transactions-ws/transactions/status/check/withnotoken").permitAll()
 
 
 
