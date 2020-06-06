@@ -1,10 +1,24 @@
 Todo : 
 
-1- make config Server --> read values from local file not githup file 
-   can we remove all local configurations and made config hierarchy.
-   recommended hierarchy :
-   application.properties --General.
-   A.properties           --specific.
-   B.properties           --specific.
+1- Update Config service to read from local file not Githup.
    
 
+2- Create Service as Following : 
+   
+   - IPN Portal Gateway.
+   - IPN Discovery Service.
+   
+   - IPN Login Service.
+   - IPN Transactions Service.
+   
+   - IPN Users Service.
+   - IPN Rolls Service.
+   - IPN Banks Service.
+   
+   - IPN Password Management Service.
+   
+3- 
+
+   
+   
+   
