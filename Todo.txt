@@ -1,24 +1,18 @@
 Todo : 
 
-1- Update Config service to read from local file not Githup.
-   
+0 -[Test] can you saftly rename service.
 
-2- Create Service as Following : 
+1- make all service's work from sql server .   
+ 
+2- Separate login and Users Service.   
+   - we may rename users as Login service and ignore or delete users Reg part . 
    
-   - IPN Portal Gateway.
-   - IPN Discovery Service.
    
-   - IPN Login Service.
-   - IPN Transactions Service.
-   
-   - IPN Users Service.
-   - IPN Rolls Service.
-   - IPN Banks Service.
-   
-   - IPN Password Management Service.
-   
-3- 
+3- make config Server --> read values from local file not githup file 
+   can we remove all local configurations and made config hierarchy.
+   recommended hierarchy :
+   application.properties --General.
+   A.properties           --specific.
+   B.properties           --specific.
 
-   
-   
-   
+
