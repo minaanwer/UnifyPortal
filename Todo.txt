@@ -1,0 +1,10 @@
+Todo : 
+
+1- make config Server --> read values from local file not githup file 
+   can we remove all local configurations and made config hierarchy.
+   recommended hierarchy :
+   application.properties --General.
+   A.properties           --specific.
+   B.properties           --specific.
+   
+
