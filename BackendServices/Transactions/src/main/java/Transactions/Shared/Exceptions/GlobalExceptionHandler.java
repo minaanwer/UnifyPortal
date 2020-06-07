@@ -1,4 +1,4 @@
-package Transactions.Shared.ExceptionHandlers;
+package Transactions.Shared.Exceptions;
 
 import Transactions.Shared.Exceptions.ErrorDetails;
 import Transactions.Shared.Exceptions.ResourceNotFoundException;
