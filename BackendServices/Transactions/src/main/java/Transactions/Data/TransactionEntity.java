@@ -1,8 +1,18 @@
-package Transactions.UI.Models;
+package Transactions.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Transaction")
 @Data
-public class TransactionModel {
+public class TransactionEntity implements Serializable {
+
+   @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String Id;
 
     private String TransactionId;  //Generated  transaction Id by system
     private String MSGTYPE ;
@@ -13,15 +23,15 @@ public class TransactionModel {
     private String AMOUNT;
     private String SETTLEMENT_AMOUNT;
     private String CARDHOLDER_AMOUNT;
-    private  String SETTLEMENT_RATE;
-    private  String    ISS_CONV_RATE;
-    private  String LOCAL_DATE;
-    private  String LOCAL_TIME;
-    private  String EXPIRY_DATE;
-    private  String POS_ENTRY_MODE;
-    private  String CABC;
-    private  String ESCODE;
-    private  String ACQ_REFDATA;
+    private String SETTLEMENT_RATE;
+    private String ISS_CONV_RATE;
+    private String LOCAL_DATE;
+    private String LOCAL_TIME;
+    private String EXPIRY_DATE;
+    private String POS_ENTRY_MODE;
+    private String CABC;
+    private String ESCODE;
+    private String ACQ_REFDATA;
     private  String RRN;
     private  String AUTH_NUMBER;
     private  String TERMID;
@@ -52,13 +62,10 @@ public class TransactionModel {
     private  String PROCESSING_STATUS;
 
 
-    public TransactionModel() {
+    public TransactionEntity() {
 
     }
 
-    public TransactionModel(String transactionId) {
-        TransactionId = transactionId;
-        this.ACCEPTOR_ID="any" ;
-        this.AMOUNT = "100";
-    }
 }
+
+

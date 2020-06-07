@@ -1,6 +1,7 @@
 package Transactions.UI.Controllers;
 
 import Transactions.Shared.Exceptions.ResourceNotFoundException;
+import Transactions.UI.Models.ResponseModel;
 import Transactions.UI.Models.TransactionModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -29,11 +30,11 @@ public class TransactionsController {
 
 
     @GetMapping("/{id}")
-   public ResponseEntity<TransactionModel> GetTransactionById(@PathVariable long id)  throws ResourceNotFoundException {
+   public ResponseEntity<ResponseModel<TransactionModel>> GetTransactionById(@PathVariable long id)  throws ResourceNotFoundException {
 
-       // Employee employee = employeeRepository.findById(id)
-        //        .orElseThrow(()-> new ResourceNotFoundException("Employee is not found id : "+id));
-        return ResponseEntity.ok().body(new TransactionModel("205050"));
+       TransactionModel trx= new TransactionModel("205050");
+        return ResponseEntity.ok().body(new ResponseModel<TransactionModel>("000","any message" , trx ));
+
     }
 
 }

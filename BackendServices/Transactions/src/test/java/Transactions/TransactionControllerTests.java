@@ -49,7 +49,7 @@ public class TransactionControllerTests extends AbstractTest {
         String content = mvcResult.getResponse().getContentAsString();
 
         TransactionModel trx = super.mapFromJson(content,TransactionModel.class);
-        
+
     }
 
 
