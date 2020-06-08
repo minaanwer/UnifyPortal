@@ -5,18 +5,18 @@ import Transactions.Shared.DTO.TransactionDTO;
 import Transactions.Shared.DTO.TransactionSearchCriteriaDTO;
 import Transactions.Shared.Exceptions.InvalidSearchCriteriaException;
 import Transactions.Shared.Exceptions.ResourceNotFoundException;
-import Transactions.Shared.Extensions.ModelMapperExtension;
+import Transactions.Shared.Extensions.ModelMapperExtended;
 import Transactions.UI.Models.ResponseModel;
 import Transactions.UI.Models.TransactionModel;
 import Transactions.UI.Models.TransactionSearchCriteriaModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/transaction")
@@ -45,25 +45,13 @@ public class TransactionsController {
     }
 
     @PostMapping("")
-    public ResponseEntity<ResponseModel<List<TransactionModel>>> Search(@RequestBody TransactionSearchCriteriaModel transactionSearchCriteriaModel )
+    public ResponseEntity<ResponseModel<List<TransactionModel>>> SearchTransaction(@RequestBody TransactionSearchCriteriaModel transactionSearchCriteriaModel )
             throws InvalidSearchCriteriaException {
         TransactionSearchCriteriaDTO transactionSearchCriteriaDTO =  new ModelMapper().map(transactionSearchCriteriaModel,TransactionSearchCriteriaDTO.class);
         List<TransactionDTO> transactionDTOLst = transactionService.Search(transactionSearchCriteriaDTO);
-        List<TransactionModel> transactionModelLst = new ModelMapperExtension().map(transactionDTOLst,TransactionModel.class);
+        List<TransactionModel> transactionModelLst = new ModelMapperExtended().mapList(transactionDTOLst,TransactionModel.class);
         return ResponseEntity.ok().body(new ResponseModel<List<TransactionModel>>("000","any message" , transactionModelLst ));
     }
-
-    @PostMapping("/{page}")
-    public ResponseEntity<ResponseModel<Page<TransactionModel>>> SearchPaginated(@PathVariable("page") Long page , @RequestBody TransactionSearchCriteriaModel transactionSearchCriteriaModel )
-            throws InvalidSearchCriteriaException {
-        TransactionSearchCriteriaDTO transactionSearchCriteriaDTO =  new ModelMapper().map(transactionSearchCriteriaModel,TransactionSearchCriteriaDTO.class);
-        Page<TransactionDTO> transactionDTOLst = transactionService.Search(transactionSearchCriteriaDTO,page);
-
-        Page<TransactionModel> transactionModelLst  = new ModelMapperExtension().map(transactionDTOLst,TransactionModel.class);
-
-        return ResponseEntity.ok().body(new ResponseModel<Page<TransactionModel>>("000","any message" , transactionModelLst ));
-    }
-
 
 
 }
