@@ -31,7 +31,7 @@ public class TransactionsController {
     }
 
 
-    @GetMapping("/status")
+    @GetMapping("/status/check")
     public String GetControllerStatus(){
         return "transaction controller says: i'm ok!";
     }

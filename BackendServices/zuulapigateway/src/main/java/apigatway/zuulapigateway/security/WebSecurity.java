@@ -29,9 +29,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http.authorizeRequests()
 
-                .antMatchers("/users-ws/users/status/check/temp").permitAll()
-                .antMatchers("/transactions-ws/transactions/status/check/withnotoken").permitAll()
-
+                .antMatchers("/login-ws/users/status/check/temp").permitAll()
+                .antMatchers("/transactions-ws/api/transaction/status/check").permitAll()
 
 
                 .antMatchers(environment.getProperty("api.zull.actuator.url.path")).permitAll()
