@@ -40,6 +40,7 @@
               "Resources/css/header-default.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "Resources/vendor/jquery/jquery.min.js",
               "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
               "Resources/vendor/jquery-migrate/jquery-migrate.min.js",
@@ -55,7 +56,8 @@
               "Resources/js/custom.js",
               "Resources/home.js",
               "Resources/js/app.js",
-              "Resources/js/page_contacts.js"
+              "Resources/js/page_contacts.js",
+              "Resources/newHome.js"
             ]
           },
           "configurations": {
