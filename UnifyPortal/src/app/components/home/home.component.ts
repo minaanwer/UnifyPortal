@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { HomeServiceService } from 'src/app/services/DataServices/home-service.service';
+import { HomeServiceService } from 'src/app/Services/Home/home-service.service';
 declare var $: any;
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginServiceService } from 'src/app/services/DataServices/Login/login-service.service';
+import { LoginServiceService } from 'src/app/services/Login/login-service.service';
 
 @Component({
   selector: 'app-login',

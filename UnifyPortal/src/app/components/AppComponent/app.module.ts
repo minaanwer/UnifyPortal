@@ -11,6 +11,7 @@ import { ErrorComponent } from '../error/error.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule  } from '@angular/common/http';
+import { AuthorizationSimpleSearchComponent } from '../authorization-simple-search/authorization-simple-search.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule  } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     ErrorComponent,
+    AuthorizationSimpleSearchComponent,
     
   ],
   imports: [

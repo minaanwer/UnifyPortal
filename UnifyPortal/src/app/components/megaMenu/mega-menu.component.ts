@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from 'src/app/services/DataServices/Login/login-service.service';
+import { LoginServiceService } from 'src/app/services/Login/login-service.service';
 
 @Component({
   selector: 'app-mega-menu',
