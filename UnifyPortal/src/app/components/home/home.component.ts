@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { HomeServiceService } from 'src/app/services/DataServices/home-service.service';
 declare var $: any;
 
 @Component({
@@ -8,7 +10,11 @@ declare var $: any;
 })
 export class HomeComponent implements AfterViewInit {
 
-  constructor() { }
+  ServerMessage: String= "any"
+
+  constructor(private homeService: HomeServiceService) {
+    this.getMessage();
+  }
 
   ngAfterViewInit() {
     $(document).ready(function () {
@@ -24,6 +30,20 @@ export class HomeComponent implements AfterViewInit {
       });
 
     });
+
+  }
+
+  getMessage() {
+    var result = this.homeService.GetMessage();
+    result.subscribe(
+      response =>{
+        this.ServerMessage = response.message;
+      } ,
+      error => {
+        console.log(error); 
+      }
+    );
+   
 
   }
 
