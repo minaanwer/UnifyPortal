@@ -4,12 +4,12 @@ import { LoginComponent } from '../login/login.component';
 import { HomeComponent } from '../home/home.component';
 import { ErrorComponent } from '../error/error.component';
 import { MegaMenuComponent } from '../megaMenu/mega-menu.component';
-
+import {RouteGuardServiceService} from '../../services/DataServices/HelpfulServices/route-guard-service.service'
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent ,canActivate : [RouteGuardServiceService] },
   {path: 'menu' , component:MegaMenuComponent},
 
 
