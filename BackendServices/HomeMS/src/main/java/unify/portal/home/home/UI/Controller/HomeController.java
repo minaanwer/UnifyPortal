@@ -23,7 +23,7 @@ public class HomeController {
 
        String message;
         try{
-             message = "You served by service on Port  : " + env.getProperty("server.port") ;
+             message = "You Served by Home MC  ON Port  : " + env.getProperty("server.port") ;
         }
         catch (Exception ex){
             message = ex.getMessage();
