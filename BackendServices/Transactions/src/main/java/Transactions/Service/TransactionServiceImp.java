@@ -55,8 +55,16 @@ public class TransactionServiceImp implements TransactionService {
     @Override
     public Page<TransactionDTO> Search(TransactionSearchCriteriaDTO searchCriteriaDTO, Long page) {
         SpecificationsBuilder builder = new SpecificationsBuilder();
-        if(!StringExtension.IsNullOrEmpty(searchCriteriaDTO.getTransactionId()))
+
+        if(searchCriteriaDTO.getTransactionId() !=null )
             builder.with("transactionId","==",searchCriteriaDTO.getTransactionId());
+     /*   if(searchCriteriaDTO.getPAN()!=null)
+            builder.with("PAN","==",searchCriteriaDTO.getPAN());
+        if(searchCriteriaDTO.getMSGTYPE()!= null)
+            builder.with("MSGTYPE","==",searchCriteriaDTO.getMSGTYPE());
+*/
+
+
         Specification<TransactionEntity> spec = builder.build();
         Page<TransactionEntity> trxLst =   PaginatedRepo.findAll(spec, PageRequest.of(page.intValue(), 10, Sort.unsorted())); // new PageRequest(page.intValue(),12,Sort.unsorted()));
      return new ModelMapperExtension().map(trxLst,TransactionDTO.class);

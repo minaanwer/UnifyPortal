@@ -40,6 +40,6 @@ public class SearchCriteria {
     }
 
     public boolean isOrPredicate() {
-        return false;
+        return true;
     }
 }

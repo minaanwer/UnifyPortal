@@ -17,7 +17,7 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
     this.transactionSearchCriteriaModel = new TransactionSearchCriteriaModel('', '', '', currentDate, currentDate)
   }
 
-  hasResult: boolean = true;
+  hasResult: boolean = false;
 
   transactionSearchCriteriaModel: TransactionSearchCriteriaModel;
   searchResults:TransactionModel[];
@@ -54,8 +54,8 @@ export class TransactionSearchCriteriaModel {
 
   constructor(
     public transactionId: String,
-    public PAN: String,
-    public MSGTYPE: String,
+    public pan: String,
+    public msgtype: String,
     public CreationDateFrom: String,
     public CreationDateto: String,
   ) { }
