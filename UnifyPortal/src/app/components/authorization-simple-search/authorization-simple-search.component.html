@@ -1,7 +1,7 @@
 <main>
-    <section class="g-min-height-60vh g-py-50">
+    <section class="g-min-height-60vh ">
         <div class="container">
-            <strong> Service Name : Transaction MicroService </strong><br>
+            <!-- <strong> Service Name : Transaction MicroService </strong><br> -->
 
             <form (ngSubmit)="searchBtnClicked()" #authTrxSimpleSearchForm="ngForm" method="post">
 
@@ -22,22 +22,24 @@
                                 <label class="form-control-label" for="userName">Transaction Id</label>
                                 <input #transactionId="ngModel"
                                     [(ngModel)]="transactionSearchCriteriaModel.transactionId" type="text"
-                                    class="form-control" id="transactionId">
+                                    class="form-control" id="form-transactionId" name="transactionId" >
                             </div>
                             <div class="col-md-6 g-py-5">
                                 <label class="form-control-label" for="email">PAN</label>
                                 <input #pan="ngModel"  [(ngModel)]="transactionSearchCriteriaModel.PAN"
-                                   type="text" class="form-control" id="pan">
+                                   type="text" class="form-control" id="form-pan" name="pan">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 g-py-5">
                                 <label class="form-control-label" for="creationdatefrom">Creation Date from </label>
-                                <input #creationdatefrom="ngModel"   type="text" class="form-control" id="creationdatefrom">
+                                <input #creationdatefrom="ngModel"   [(ngModel)]="transactionSearchCriteriaModel.CreationDateFrom"  type="text" class="form-control"
+                                 id="form-creationdatefrom" name="creationdatefrom">
                             </div>
                             <div class="col-md-6 g-py-5">
                                 <label class="form-control-label" for="nationalId">Creation Date to </label>
-                                <input type="text" class="form-control" id="creationdateto">
+                                <input  #creationdateto="ngModel"   [(ngModel)]="transactionSearchCriteriaModel.CreationDateto" type="text" 
+                                class="form-control" id="form-creationdateto" name="creationdateto" >
                             </div>
 
                         </div>
@@ -45,7 +47,8 @@
                         <div class="row">
                             <div class="col-md-6 g-py-5">
                                 <label class="form-control-label" for="mobilePhone">Message Type</label>
-                                <input type="text" class="form-control" id="msgtype">
+                                <input #msgtype="ngModel" [(ngModel)]="transactionSearchCriteriaModel.MSGTYPE" type="text"
+                                 class="form-control" id="form-msgtype" name="msgtype" > 
                             </div>
 
                         </div>
@@ -61,7 +64,6 @@
                         </div>
                     </div>
                 </div>
-
             </form>
 
             <div *ngif="hasResult" class="card g-brd-teal rounded-0 g-mb-30">

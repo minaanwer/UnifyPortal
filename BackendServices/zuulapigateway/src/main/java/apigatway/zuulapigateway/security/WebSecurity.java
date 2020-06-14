@@ -31,7 +31,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/login-ws/users/status/check/temp").permitAll()
                 .antMatchers("/transactions-ws/api/transaction/status/check").permitAll()
-
+                .antMatchers("/home-ws/api/v1/home/status/check").permitAll()
 
                 .antMatchers(environment.getProperty("api.zull.actuator.url.path")).permitAll()
                 .antMatchers(environment.getProperty("api.users.actuator.url.path")).permitAll()

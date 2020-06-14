@@ -9,7 +9,7 @@ export class HomeServiceService {
 
   GetMessage()
   {
-    return this.http.get<StatusResponse>("http://localhost:5065/api/v1/home/status/check")
+    return this.http.get<StatusResponse>("http://m-lewes.egyptianbanks.net:8011/home-ws/api/v1/home/status/check")
   }
 
 

@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class HomeComponent implements AfterViewInit {
 
-  ServerMessage: String= "any"
+  ServerMessage: String= "no message available"
 
   constructor(private homeService: HomeServiceService) {
     this.getMessage();
