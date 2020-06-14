@@ -1,2 +1,6 @@
 Done!
 
+2- make all service's work from sql server .   
+3- Separate login and Users Service. 
+4- add Transaction Page with routes.
+11- fix issue in route home page partially .

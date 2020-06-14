@@ -27,10 +27,9 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
 
 
   searchBtnClicked() {
-    console.log("searchBtnClicked");
     console.log(this.transactionSearchCriteriaModel)
     
-    let result =   this.authorizationSearchService.Search();
+    let result =   this.authorizationSearchService.Search(this.transactionSearchCriteriaModel);
 
     result.subscribe(
       response => console.log(response),

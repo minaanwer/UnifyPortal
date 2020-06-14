@@ -1,18 +1,18 @@
 Todo : 
 
-0 -[Test] can you saftly rename service.
-
-1- make all service's work from sql server .   
- 
-2- Separate login and Users Service.   
-   - we may rename users as Login service and ignore or delete users Reg part . 
-   
-   
-3- make config Server --> read values from local file not githup file 
+1 -[Test] can you saftly rename service.
+4- we may rename users as Login service and ignore or delete users Reg part . 
+5- make config Server --> read values from local file not githup file 
    can we remove all local configurations and made config hierarchy.
    recommended hierarchy :
    application.properties --General.
    A.properties           --specific.
    B.properties           --specific.
 
+6- in Transaction Page , implement Export . 
+7- in transaction Page , Map all fields . 
+8- in Transaction Page , add Details Page .
+
+9-  Make only one status call without authentication , check that zull has no extra Mapping calls.
+10- Make Creation date to , from --> date 
 

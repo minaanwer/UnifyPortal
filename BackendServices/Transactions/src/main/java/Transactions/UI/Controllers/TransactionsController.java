@@ -20,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transaction")
+@CrossOrigin("*")
 public class TransactionsController {
     private Environment environment;
     private TransactionService transactionService;
