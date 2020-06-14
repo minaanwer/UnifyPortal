@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { AuthorizationSearchService } from 'src/app/Services/AuthorizationTransactionSearch/authorization-search.service';
+import { AuthorizationSearchService, TransactionModel } from 'src/app/Services/AuthorizationTransactionSearch/authorization-search.service';
 import { error } from 'protractor';
 
 
@@ -17,10 +17,10 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
     this.transactionSearchCriteriaModel = new TransactionSearchCriteriaModel('', '', '', currentDate, currentDate)
   }
 
-  hasResult: boolean = false;
+  hasResult: boolean = true;
 
   transactionSearchCriteriaModel: TransactionSearchCriteriaModel;
-
+  searchResults:TransactionModel[];
 
   ngOnInit(): void {
   }
@@ -32,8 +32,18 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
     let result =   this.authorizationSearchService.Search(this.transactionSearchCriteriaModel);
 
     result.subscribe(
-      response => console.log(response),
-      error    => console.log(error)
+      response => {
+        console.log("response");
+        console.log(response);
+        console.log(response.data.content)
+        this.searchResults = response.data.content;
+        this.hasResult = true;
+      },
+      error    =>{ 
+        console.log("error occured")
+        console.log(error);
+      
+      }
     )
 
   }

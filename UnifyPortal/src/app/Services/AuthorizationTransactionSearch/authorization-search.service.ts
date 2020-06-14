@@ -34,5 +34,5 @@ export class Page {
 }
 
 export class TransactionModel{
-  constructor( TransactionId:String , MSGTYPE:String   ){}
+  constructor( TransactionId:String , MSGTYPE:String ,pan:String,rrn:String, settlement_DATE:String,settlement_AMOUNT:String ){}
 }
