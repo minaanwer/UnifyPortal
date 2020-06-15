@@ -10,8 +10,11 @@ import { LoginComponent } from '../login/login.component';
 import { ErrorComponent } from '../error/error.component';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { AuthorizationSimpleSearchComponent } from '../authorization-simple-search/authorization-simple-search.component';
+
+//import { HttpInterceptorService } from 'src/app/Services/interceptors/http-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { AuthorizationSimpleSearchComponent } from '../authorization-simple-sear
     FormsModule,
     HttpClientModule 
   ],
-  providers: [],
+  providers: [   /* { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { TransactionSearchCriteriaModel } from 'src/app/components/authorization-simple-search/authorization-simple-search.component';
 
 @Injectable({
@@ -7,15 +7,19 @@ import { TransactionSearchCriteriaModel } from 'src/app/components/authorization
 })
 export class AuthorizationSearchService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ) { }
  
  
   Search(transactionSearchCriteriaModel:TransactionSearchCriteriaModel)
   {
+    let token =  sessionStorage.getItem('token');
+    
+    console.log('token befor send ' + token)
+    const headers = new HttpHeaders().append('Authorization',`bearer ${token}`);
 
-    //return this.http.post<ResponseModel>("localhost:8011/transactions-ws/api/transaction/0" , transactionSearchCriteriaModel)
-    return this.http.post<ResponseModel>("http://m-lewes.egyptianbanks.net:8080/api/transaction/0", transactionSearchCriteriaModel)
-  
+
+    return this.http.post<ResponseModel>("http://localhost:8011/transactions-ws/api/transaction/0", transactionSearchCriteriaModel ,
+    {headers: headers ,observe: 'response' as 'body' })  
   }
 
 }
@@ -34,5 +38,13 @@ export class Page {
 }
 
 export class TransactionModel{
-  constructor( TransactionId:String , MSGTYPE:String ,pan:String,rrn:String, settlement_DATE:String,settlement_AMOUNT:String ){}
+  constructor( TransactionId:String , MSGTYPE:String ,PAN:String,RRN:String, SETTLEMENT_RATE:String, ){}
 }
+
+
+// <th>#</th>
+// <th>Transaction Id</th>
+// <th>PAN</th>
+// <th>RRN</th>
+// <th>Settlement Date</th>
+// <th>Settlement Amount</th>

@@ -10,6 +10,9 @@ export class HomeServiceService {
   GetMessage()
   {
     return this.http.get<StatusResponse>("http://m-lewes.egyptianbanks.net:8011/home-ws/api/v1/home/status/check")
+  //http://localhost:8011/login-ws/users/status/check/temp
+  
+  //return this.http.get<StatusResponse>("http://localhost:8011/login-ws/users/status/check/temp")
   }
 
 

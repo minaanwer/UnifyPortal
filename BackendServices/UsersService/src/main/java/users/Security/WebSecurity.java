@@ -3,6 +3,7 @@ package users.Security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -29,10 +30,11 @@ import users.Service.UsersService;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/**").permitAll()
-                .and().addFilter(getAuthenticationFilter());
+        //http.authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
+        http.authorizeRequests().antMatchers("/**").permitAll().and().addFilter(getAuthenticationFilter());
         //http.authorizeRequests().antMatchers("/**").hasIpAddress(environment.getProperty("gateway.api"));
         http.headers().frameOptions().disable();
+      http.cors();
     }
 
     @Override

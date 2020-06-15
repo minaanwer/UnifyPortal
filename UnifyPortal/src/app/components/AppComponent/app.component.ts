@@ -10,11 +10,4 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'UnifyPortal';
-
-  // @HostListener('window:onbeforeunload', ["$event"])
-  // clearLocalStorge(event) {
-  //   localStorage.removeItem('activeUser')
-  //   localStorage.clear()
-  // }
-
 }

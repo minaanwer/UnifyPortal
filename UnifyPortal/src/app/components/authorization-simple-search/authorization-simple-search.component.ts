@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AuthorizationSearchService, TransactionModel } from 'src/app/Services/AuthorizationTransactionSearch/authorization-search.service';
-import { error } from 'protractor';
-
 
 @Component({
   selector: 'app-authorization-simple-search',
@@ -10,9 +8,10 @@ import { error } from 'protractor';
   styleUrls: ['./authorization-simple-search.component.css'],
   providers: [DatePipe]
 })
+
 export class AuthorizationSimpleSearchComponent implements OnInit {
 
-  constructor(private datePipe: DatePipe ,private authorizationSearchService :AuthorizationSearchService ) {
+  constructor(private datePipe: DatePipe, private authorizationSearchService: AuthorizationSearchService) {
     let currentDate: String = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     this.transactionSearchCriteriaModel = new TransactionSearchCriteriaModel('', '', '', currentDate, currentDate)
   }
@@ -20,7 +19,7 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
   hasResult: boolean = false;
 
   transactionSearchCriteriaModel: TransactionSearchCriteriaModel;
-  searchResults:TransactionModel[];
+  searchResults: TransactionModel[];
 
   ngOnInit(): void {
   }
@@ -28,8 +27,8 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
 
   searchBtnClicked() {
     console.log(this.transactionSearchCriteriaModel)
-    
-    let result =   this.authorizationSearchService.Search(this.transactionSearchCriteriaModel);
+
+    let result = this.authorizationSearchService.Search(this.transactionSearchCriteriaModel);
 
     result.subscribe(
       response => {
@@ -39,10 +38,10 @@ export class AuthorizationSimpleSearchComponent implements OnInit {
         this.searchResults = response.data.content;
         this.hasResult = true;
       },
-      error    =>{ 
+      error => {
         console.log("error occured")
         console.log(error);
-      
+
       }
     )
 
