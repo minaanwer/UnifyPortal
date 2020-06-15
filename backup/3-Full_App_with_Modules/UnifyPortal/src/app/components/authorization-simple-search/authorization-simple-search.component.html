@@ -1,0 +1,150 @@
+<main>
+    <section class="g-min-height-60vh ">
+        <div class="container">
+            <!-- <strong> Service Name : Transaction MicroService </strong><br> -->
+
+            <form (ngSubmit)="searchBtnClicked()" #authTrxSimpleSearchForm="ngForm" method="post">
+
+                <div style="visibility:hidden;">
+                    <div class="alert alert-danger">
+                        <span> error will appear here </span>
+                    </div>
+                </div>
+
+                <div class="card g-brd-teal rounded-0 g-mb-30">
+                    <div class="card-header g-bg-primary g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">
+                        <i class="fa fa-tasks g-mr-5"></i>
+                        Search Criteria
+                    </div>
+                    <div class="card-body g-px-20 g-py-10">
+                        <div class="row">
+                            <div class="col-md-6 g-py-5">
+                                <label class="form-control-label" for="userName">Transaction Id</label>
+                                <input #transactionId="ngModel"
+                                    [(ngModel)]="transactionSearchCriteriaModel.transactionId" type="text"
+                                    class="form-control" id="form-transactionId" name="transactionId" >
+                            </div>
+                            <div class="col-md-6 g-py-5">
+                                <label class="form-control-label" for="email">PAN</label>
+                                <input #pan="ngModel"  [(ngModel)]="transactionSearchCriteriaModel.pan"
+                                   type="text" class="form-control" id="form-pan" name="pan">
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-md-6 g-py-5">
+                                <label class="form-control-label" for="creationdatefrom">Creation Date from </label>
+                                <input #creationdatefrom="ngModel"   [(ngModel)]="transactionSearchCriteriaModel.CreationDateFrom"  type="text" class="form-control"
+                                 id="form-creationdatefrom" name="creationdatefrom">
+                            </div>
+                            <div class="col-md-6 g-py-5">
+                                <label class="form-control-label" for="nationalId">Creation Date to </label>
+                                <input  #creationdateto="ngModel"   [(ngModel)]="transactionSearchCriteriaModel.CreationDateto" type="text" 
+                                class="form-control" id="form-creationdateto" name="creationdateto" >
+                            </div>
+
+                        </div> -->
+
+                        <div class="row">
+                            <div class="col-md-6 g-py-5">
+                                <label class="form-control-label" for="mobilePhone">Message Type</label>
+                                <input #msgtype="ngModel" [(ngModel)]="transactionSearchCriteriaModel.msgtype" type="text"
+                                 class="form-control" id="form-msgtype" name="msgtype" > 
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn col-md-2 btn-primary g-px-20 g-py-5">
+                                    <i class="fa fa-floppy-o"></i>
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div *ngIf="hasResult" class="card g-brd-teal rounded-0 g-mb-30">
+                <div class="card-header g-bg-primary g-brd-transparent g-color-white g-font-size-16 rounded-0 mb-0">
+                    <i class="fa fa-tasks g-mr-5"></i>
+                    Results
+                </div>
+                <div class="card-body g-px-20 g-py-10">
+                    <div class="table-responsive">
+                        <table class="table table-striped u-table--v1 mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Transaction Id</th>
+                                    <th>PAN</th>
+                                    <th>RRN</th>
+                                    <th>Settlement Date</th>
+                                    <th>Settlement Amount</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--
+                                <tr th:each="user : ${usersGrid.getList()}" th:if="${usersGrid.getList().size() > 0}">
+                                    <th scope="row" th:text="${user.id}"></th>
+                                    <td th:text="${user.userName}"></td>
+                                    <td th:text="${user.fullName}"></td>
+                                    <td th:text="${user.branchName}"></td>
+                                    <td th:text="${user.roleName}"></td>
+                                    <td class="text-center"><a
+                                            th:href="@{'/admin/users/update/details?id='+${user.Id}}">Update</a>
+                                    </td>
+                                    <td class="text-center"><a
+                                            th:href="@{'/admin/users/details?id='+${user.Id}}">Details</a></td>
+                                    <td class="text-center"><a
+                                            th:href="@{'/admin/privileges/update/new?id='+${user.Id}}">Update
+                                            Privileges</a></td>
+                                </tr>
+                                <tr th:if="${usersGrid.getList().size() == 0}">
+                                    <td colspan="7" class="text-center">No data found</td>
+                                </tr>
+                                -->
+                                <tr *ngFor="let item of searchResults">
+                                    <td><a href=""> Details </a></td>
+                                    <td>{{item.transactionId}}</td>
+                                    <td>{{item.pan}}</td>
+                                    <td>{{item.rrn}}</td>
+                                    <td>{{item.settlement_DATE}}</td>
+                                    <td>{{item.settlement_AMOUNT}}</td>
+                                 
+
+
+                                </tr>
+                                <tr *ngIf = "false" >
+                                    <td colspan="7" class="text-center">No data found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div>
+                            <div th:if="${usersGrid.getList().size() > 0}"
+                                th:replace="fragments/pagination :: pagination('/admin/users/search',${usersGrid.getPageNumber()}, ${usersGrid.getTotalSize()}, ${usersGrid.getStartIndex()}, ${usersGrid.getEndIndex()})">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- End Striped Rows -->
+
+            </div>
+            <div class="exportContainer">
+            <a *ngIf="hasResult" class="btn btn-primary col-md-1  export"> Export </a>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+</main>
