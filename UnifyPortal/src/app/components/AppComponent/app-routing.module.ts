@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent ,canActivate : [RouteGuardServiceService] },
-  {path: 'menu' , component:MegaMenuComponent},
-  {path: 'authorizationsimplesearch' , component:AuthorizationSimpleSearchComponent},
+  {path: 'menu' , component:MegaMenuComponent,canActivate : [RouteGuardServiceService]},
+  {path: 'authorizationsimplesearch' , component:AuthorizationSimpleSearchComponent  ,canActivate : [RouteGuardServiceService]},
   
 
 
