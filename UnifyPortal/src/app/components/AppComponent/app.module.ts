@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { AuthorizationSimpleSearchComponent } from '../authorization-simple-search/authorization-simple-search.component';
-
-//import { HttpInterceptorService } from 'src/app/Services/interceptors/http-interceptor.service';
+import { SpinLoaderComponent } from '../spin-loader/spin-loader.component';
+import { LoaderInterceptorService } from '../../Services/interceptors/loader-interceptor.service';
 
 
 @NgModule({
@@ -25,6 +25,9 @@ import { AuthorizationSimpleSearchComponent } from '../authorization-simple-sear
     LoginComponent,
     ErrorComponent,
     AuthorizationSimpleSearchComponent,
+    SpinLoaderComponent
+
+
     
   ],
   imports: [
@@ -33,7 +36,7 @@ import { AuthorizationSimpleSearchComponent } from '../authorization-simple-sear
     FormsModule,
     HttpClientModule 
   ],
-  providers: [   /* { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }*/
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
 })

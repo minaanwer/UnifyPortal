@@ -1,9 +1,20 @@
 
 <app-mega-menu></app-mega-menu>
 
+<app-spin-loader></app-spin-loader>
+
 <div class="minHight">
-<router-outlet  ></router-outlet>
+
+
+
+    <router-outlet  ></router-outlet>
+
+
 </div>
+
+
 <app-footer></app-footer>
+
+<button (click)="makeHttpCall()">Make slow Http Call</button>
 
 
