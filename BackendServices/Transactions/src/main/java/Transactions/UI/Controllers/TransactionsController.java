@@ -47,7 +47,7 @@ public class TransactionsController {
 
     @PostMapping("")
     public ResponseEntity<ResponseModel<List<TransactionModel>>> Search(@RequestBody TransactionSearchCriteriaModel transactionSearchCriteriaModel )
-            throws InvalidSearchCriteriaException {
+            throws Exception {
         TransactionSearchCriteriaDTO transactionSearchCriteriaDTO =  new ModelMapper().map(transactionSearchCriteriaModel,TransactionSearchCriteriaDTO.class);
         List<TransactionDTO> transactionDTOLst = transactionService.Search(transactionSearchCriteriaDTO);
         List<TransactionModel> transactionModelLst = new ModelMapperExtension().map(transactionDTOLst,TransactionModel.class);
@@ -56,7 +56,7 @@ public class TransactionsController {
 
     @PostMapping("/{page}")
     public ResponseEntity<ResponseModel<Page<TransactionModel>>> SearchPaginated(@PathVariable("page") Long page , @RequestBody TransactionSearchCriteriaModel transactionSearchCriteriaModel )
-            throws InvalidSearchCriteriaException {
+            throws Exception {
         TransactionSearchCriteriaDTO transactionSearchCriteriaDTO =  new ModelMapper().map(transactionSearchCriteriaModel,TransactionSearchCriteriaDTO.class);
         Page<TransactionDTO> transactionDTOLst = transactionService.Search(transactionSearchCriteriaDTO,page);
 
